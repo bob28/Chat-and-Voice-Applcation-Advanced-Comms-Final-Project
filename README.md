@@ -23,7 +23,7 @@ Open up 2 windows of the same URL and start typing in your messages. You will se
 The voice application requires NodeJS to run this application. You can download NodeJS from this site: https://nodejs.org/en/download/. Download the correct version for your device. Close the terminal after installing NPM (if you have it open) so that updates with the NPM library. 
 After that, navigate to the voice_Application folder and open a terminal window in this folder. Type: 
 ```
-npm i express express-handlebars socket.io nodemon
+npm install
 ```
 Then, to run the Application: 
 ```
