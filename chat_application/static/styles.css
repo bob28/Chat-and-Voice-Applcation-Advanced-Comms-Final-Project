@@ -95,7 +95,7 @@ input{
 }
 
 .chat .chat-history .my-message {
-    background: #efefef
+    background: #f1ece9
 }
 
 .chat .chat-history .my-message:after {
@@ -107,18 +107,19 @@ input{
     width: 0;
     position: absolute;
     pointer-events: none;
-    border-bottom-color: #efefef;
+    border-bottom-color: #f1ece9;
     border-width: 10px;
     margin-left: -10px
 }
 
 .chat .chat-history .other-message {
-    background: #e8f1f3;
+    background: #00a192;
+    color:white;
     text-align: right
 }
 
 .chat .chat-history .other-message:after {
-    border-bottom-color: #e8f1f3;
+    border-bottom-color: #00a192;
     left: 93%
 }
 
@@ -138,7 +139,7 @@ input{
     float: right
 }
 
-.clearfix:after {
+.texts:after {
     visibility: hidden;
     display: block;
     font-size: 0;
@@ -183,7 +184,8 @@ input{
     }
 }
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and 
+(orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
     .chat-app .chat-list {
         height: 480px;
         overflow-x: auto
@@ -194,3 +196,6 @@ input{
         overflow-x: auto
     }
 }
+
+/* We also used this Bootstrap chat template. We modified it extensively: 
+https://www.bootdey.com/snippets/view/chat-app */

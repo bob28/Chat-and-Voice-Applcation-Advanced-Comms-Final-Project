@@ -58,7 +58,7 @@ function main() {
       // read the blob
       fileReader.readAsDataURL(blob);
       fileReader.onloadend = function () {
-        // make sure that the user's micrphone is active and online
+        // make sure that the user's microphone is active and online
         if (!userDetails.micOn || !userDetails.online) return;
         var base64 = fileReader.result;
         // send back the string back to the server to broadcast it to the other 
@@ -66,7 +66,7 @@ function main() {
         socket.emit("voice", base64);
 
       };
-      // the starting of the recorderusernameLabel
+      // the starting of the recorder usernameLabel
       mediaRecorder.start();
       setTimeout(function () {
         mediaRecorder.stop();
@@ -93,7 +93,7 @@ function main() {
     // loop through the user datas
     for (const i in data) {
       if (!Object.hasOwnProperty.call(data, i)) continue;
-      // createt the element, add it to the list, 
+      // create the element, add it to the list, 
       const element = data[i];
       // create the li element
       const li = document.createElement("li");

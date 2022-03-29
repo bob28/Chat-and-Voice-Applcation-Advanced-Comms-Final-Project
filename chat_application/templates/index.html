@@ -6,13 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advanced Comms - Final Project - Chat App</title>
+    <!-- the link to the styles sheet -->
     <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet" type="text/css">
+    <!-- bootstrap link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- the link to font-awsome, used by bootstrap  -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 </head>
 
 <body>
+    <!-- the navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container px-4 px-lg-5">
             <a class="navbar-brand" href="#!">ChatPrism</a>
@@ -27,7 +31,7 @@
             </div>
         </div>
     </nav>
-    <!-- Header-->
+    <!-- the header -->
     <header class="bg-dark py-5">
         <div class="container px-4 px-lg-5 my-5">
             <div class="text-center text-white">
@@ -38,74 +42,33 @@
     </header>
 
     <div class="container">
-        <div class="row clearfix mb-5">
+        <div class="row texts mb-5">
             <div class="col-lg-12 mb-5">
                 <div class="card chat-app mb-5">
 
                     <div class="chat">
-                        <div class="chat-history message_holder">
-                            <ul class="m-b-0" >
+                        <!-- the messageHolder div holds all of the messages that will be sent -->
+                        <div class="chat-history messageHolder">
+                            <ul class="m-b-0">
                                 <h3 class="text-center mt-5" style='color: #ccc;font-size: 30px;'>No messages yet..</h3>
-                                <!-- <li class="clearfix">
-                                    <div class="message-data text-right">
-                                        <span class="message-data-time">10:10 AM, Today</span>
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
-                                    </div>
-                                    <div class="message other-message float-right"> Hi Aiden, how are you? How is the
-                                        project coming along? </div>
-                                </li>
-                                <li class="clearfix">
-                                    <div class="message-data">
-                                        <span class="message-name">Aiden</span>
-                                        <span class="message-data-time">10:12 AM</span>
-                                    </div>
-                                    <div class="message my-message">Project has been already finished and I have results
-                                        to show you.</div>
-                                </li>
-                                <li class="clearfix">
-                                    <div class="message-data text-right">
-                                        <span class="message-name">sdfs</span>
-                                        <span class="message-data-time">10:10 AM, Today</span>
-                                    </div>
-                                    <div class="message other-message float-right"> Hi Aiden, how are you? How is the
-                                        project coming along? </div>
-                                </li>
-                                <li class="clearfix">
-                                    <div class="message-data">
-                                        <span class="message-data-time">10:15 AM, Today</span>
-                                    </div>
-                                    <div class="message my-message">Project has been already finished and I have results
-                                        to show you.</div>
-                                </li> -->
                             </ul>
                         </div>
-                        <!-- <div class="message_holder"> </div> -->
-                        <div class="chat-message clearfix text-center">
+                        <!-- the form to take in the input -->
+                        <div class="chat-message texts text-center">
                             <form action="" method="POST">
-                            <input type="text" class="username" placeholder="User Name">
-                            <input style="width: 50%;" type="text" class="message" placeholder="Type your message...">
-                            <input style="width: 17%;border-radius: 7px;" class="btn btn-primary btn-submit"
-                                type="submit">
+                                <input type="text" class="username" placeholder="User Name">
+                                <input style="width: 50%;" type="text" class="message"
+                                    placeholder="Type your message...">
+                                <input style="width: 17%;border-radius: 7px;" class="btn btn-primary btn-submit"
+                                    type="submit">
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- <h3 style='color: #ccc;font-size: 30px;'>No message yet..</h3>
-            <div class="message_holder"></div>
 
-            <form action="" method="POST">
-                <input type="text" class="username" placeholder="User Name" />
-                <input type="text" class="message" placeholder="Messages" />
-                <div style="width: 50%;" class="alert alert-danger" role="alert" id="error">
-
-                </div>
-                <input class="btn btn-primary btn-submit" type="submit" />
-            </form> -->
     </div>
-    </div>
-
     <!-- add jquery  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- add socket.io -->
@@ -153,3 +116,6 @@
 // Wargowski, M., & Gold, N. (2019, November 26). How to write a video chat 
 // app using WebRTC Node.js. The Software House. Retrieved March 20, 2022, 
 // from https://tsh.io/blog/how-to-write-video-chat-app-using-webrtc-and-nodejs/ -->
+
+<!-- We also used this Bootstrap chat template. We modified it extensively: 
+https://www.bootdey.com/snippets/view/chat-app -->

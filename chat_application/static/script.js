@@ -23,13 +23,13 @@ socket.on('connect', function () {
             $("#error").show();
             $("#error").text("Please input text in both textboxes");
         } else {
-            // know who it is
+            // figure out who the present user is
             userId = username;
             // disable the input and set the value to the username so that the 
             // user cannot change it
             $(".username").prop('disabled', true);
             $(".username").val(userId);
-            // if it valid, then emit the emssage
+            // if it valid, then emit the message
             $("#error").hide();
             var d = new Date();
             // use socket to send the information to the server with the message
@@ -39,7 +39,7 @@ socket.on('connect', function () {
                 time: n = d.toLocaleTimeString()
             })
         }
-        // focus the message that was sent
+        // focus the textbox message input
         $('input.message').val('').focus();
     })
 });
@@ -51,28 +51,27 @@ socket.on('recieveMessage', function (message) {
     if (typeof message.username !== 'undefined') {
         //remove the h3
         $('h3').remove();
+        // check if the username is the same person, as this person will be on the 
+        // right of the screen
         if (message.username == userId) {
-            $('.message_holder ul').append('<li class="clearfix"><div class="message-data text-right"><span class="message-name">'+ 
+            // append the html with the information to the ul list
+            $('.messageHolder ul').append('<li class="texts"><div class="message-data text-right"><span class="message-name">'+ 
             message.username +'</span> <span class = "message-data-time" >' + message.time +
             '</span> </div > <div class = '+ '"message other-message float-right" >' + message.message + 
-            '</div> </li >')
-            console.log("text")
-            // $('.message_holder ul').append("text");
+            '</div> </li >');
+            console.log("text");
         }
+        // if it is some other user, then show it on the left
         else{ 
-            let text = '<li class="clearfix"><div class="message-data"><span class="message-name">'+ message.username + 
+            // create the text variable that stores the html that we need to build the element
+            let text = '<li class="texts"><div class="message-data"><span class="message-name">'+ message.username + 
             '</span><span class="message-data-time">'+message.time + '</span></div><div class="message my-message">' +
-            message.message + '</div></li>'
-            $('.message_holder ul').append(text);
+            message.message + '</div></li>';
+            // add the text to the ul list
+            $('.messageHolder ul').append(text);
         }
-        
-        // add the element to the screen with the data that was recieved from 
-        // the server with the message 
-        // $('div.message_holder').append('<div><b style="color: #000">' +
-        //     message.username + '</b> ' + message
-        //     .message + ' ' + message.time + '</div>');
     }
-})
+});
 
 // References
 
