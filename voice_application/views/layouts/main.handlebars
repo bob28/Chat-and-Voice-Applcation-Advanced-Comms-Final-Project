@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Comms - Final Project</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.js"
+        integrity="sha512-iZIBSs+gDyTH0ZhUem9eQ1t4DcEn2B9lHxfRMeGQhyNdSUz+rb+5A3ummX6DQTOIs1XK0gOteOg/LPtSo9VJ+w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    {{!-- add bootstrap --}}
+
+    </script>
+
+
+</head>
+<style>
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    #usernameDiv {
+        display: none;
+    }
+
+    .listOfUsers {
+        list-style-type: none;
+    }
+
+    .on {
+        background-color: green !important;
+        color: #fff;
+        border:  5px solid green !important;
+        margin: 10px;
+    }
+    .on :active { 
+        background-color: green;
+        color: #fff;
+    }
+
+    .off {
+        background-color: red !important;
+        color: #fff;
+         border:  5px solid red !important;
+        margin: 10px;
+    }
+    .off :active { 
+        background-color: red;
+        color: #fff;
+        border: 5px solid red;
+    }
+
+     .on :active { 
+        background-color: green;
+        color: #fff;
+    }
+</style>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="#!">VoicePrism</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <li class="nav-item"><a class="nav-link active" target="_blank" aria-current="page"
+                            href="http://127.0.0.1:5000/">Text Chat</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Header-->
+    <header class="bg-dark py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">VoicePrism</h1>
+                <p class="lead fw-normal text-white-50 mb-0">The best place to talk online! </p>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row mb-5 mt-5 text-center">
+            <p>Click on "Go Online" to go online and speak to the other users that are connected! <br>
+                Then, click on open microphone and you will be speaking!</p>
+            {{!-- The body variable or the index file. --}}
+            {{{body}}}
+        </div>
+    </div>
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Advanced Comms - Final Project</p>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+{{!-- // REFERENCES
+
+// Arora, T. (2021, March 23). Building a Video Chat App with Node.js + Socket.io + 
+//     WebRTC. Level Up Coding. Retrieved March 20, 2022, from 
+//     https://levelup.gitconnected.com/building-a-video-chat-app-with-node-js-
+//     socket-io-webrtc-26f46b213017
+// Emmanuel, F. (2021, November 8). How to Build a Realtime Group Chat Application 
+//     with React and Socket.io. DEV Community ‍ ‍. Retrieved March 20, 2022, 
+//     from
+//     https://dev.to/divofred/how-to-build-a-realtime-group-chat-application-with-
+//     react-and-socketio-2jf0
+// Eseme, S. (2021, January 25). Build a real-time chat app with Vuejs, socket.IO, 
+//     and Nodejs. Mastering Backend. Retrieved March 20, 2022, from 
+//     https://masteringbackend.com/posts/build-a-real-time-chat-app-with-vuejs-
+//     socket-io-and-nodejs/
+// h_mobarakian. (2021, June 13). Create simple voice chat app with nodejs. DEV 
+//     Community ‍ ‍. Retrieved March 20, 2022, from 
+//     https://dev.to/hosseinmobarakian/create-simple-voice-chat-app-with-nodejs-1b70
+// Nayak, A. (2021, July 19). How to Build a Chat App with ReactJS, NodeJS, and 
+//     Socket.IO? Bacancy Technology. Retrieved March 20, 2022, from 
+//     https://www.bacancytechnology.com/blog/how-to-build-a-chat-app
+// Njoroge, E. (2021, May 5). Creating a Real Time Chat App using React and Socket 
+//     IO with E2E Encryption. Section.io. Retrieved March 20, 2022, from 
+//     https://www.section.io/engineering-education/creating-a-real-time-chat-app-
+//     with-react-socket-io-with-e2e-encryption/
+// Safak. (2021, May 26). React Instant Chat App Using Node.js and Socket.io. DEV 
+//     Community ‍ ‍. Retrieved March 20, 2022, from 
+//     https://dev.to/safak/react-instant-chat-app-using-node-js-and-socket-io-5c7k
+// Wargowski, M., & Gold, N. (2019, November 26). How to write a video chat app 
+//     using WebRTC Node.js. The Software House. Retrieved March 20, 2022, from 
+//     https://tsh.io/blog/how-to-write-video-chat-app-using-webrtc-and-nodejs/ --}}

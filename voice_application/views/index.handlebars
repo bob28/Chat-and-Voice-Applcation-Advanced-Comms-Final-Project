@@ -1,0 +1,69 @@
+{{!-- The main page content that will go onto the main handlebars webapge --}}
+<section>
+    <div class="row">
+        {{!-- the username label  --}}
+        <h4 id="usernameLabel">Your username is: </h4>
+        <p>Click your username to change it!</p>
+        <p></p>
+        {{!-- allow the user to change usernames --}}
+        <div id="usernameDiv">
+            {{!-- the username text-box to change it --}}
+            <input type="text" id="username" class="mb-5">
+            <button class="btn btn-secondary usernameButton " onclick="changeUsername()">Change Username</button>
+
+        </div>
+    </div>
+
+    <div class="controller">
+        <button class="btn btn-primary off mb-3 " onclick="switchConnection(this)">Go online</button>
+        <br>
+        <br>
+        <button class="btn btn-primary off mb-3" onclick="switchMic(this)">Open microphone</button>
+
+        <button class="btn btn-primary off mb-3 mute" onclick="switchMute(this)">Mute</button>
+
+    </div>
+
+</section>
+
+<h5 class="mt-5">Users Online in this lobby:</h5>
+<ul class="listOfUsers" id="listOfUsers">
+
+</ul>
+
+{{!-- link the external script code --}}
+<script src="static/script.js"></script>
+
+
+
+{{!-- // REFERENCES
+
+// Arora, T. (2021, March 23). Building a Video Chat App with N ode.js + Socket.io + 
+//     WebRTC. Level Up Coding. Retrieved March 20, 2022, from 
+//     https://levelup.gitconnected.com/building-a-video-chat-app-with-node-js-
+//     socket-io-webrtc-26f46b213017
+// Emmanuel, F. (2021, November 8). How to Build a Realtime Group Chat Application 
+//     with React and Socket.io. DEV Community ‍ ‍. Retrieved March 20, 2022, 
+//     from
+//     https://dev.to/divofred/how-to-build-a-realtime-group-chat-application-with-
+//     react-and-socketio-2jf0
+// Eseme, S. (2021, January 25). Build a real-time chat app with Vuejs, socket.IO, 
+//     and Nodejs. Mastering Backend. Retrieved March 20, 2022, from 
+//     https://masteringbackend.com/posts/build-a-real-time-chat-app-with-vuejs-
+//     socket-io-and-nodejs/
+// h_mobarakian. (2021, June 13). Create simple voice chat app with nodejs. DEV 
+//     Community ‍ ‍. Retrieved March 20, 2022, from 
+//     https://dev.to/hosseinmobarakian/create-simple-voice-chat-app-with-nodejs-1b70
+// Nayak, A. (2021, July 19). How to Build a Chat App with ReactJS, NodeJS, and 
+//     Socket.IO? Bacancy Technology. Retrieved March 20, 2022, from 
+//     https://www.bacancytechnology.com/blog/how-to-build-a-chat-app
+// Njoroge, E. (2021, May 5). Creating a Real Time Chat App using React and Socket 
+//     IO with E2E Encryption. Section.io. Retrieved March 20, 2022, from 
+//     https://www.section.io/engineering-education/creating-a-real-time-chat-app-
+//     with-react-socket-io-with-e2e-encryption/
+// Safak. (2021, May 26). React Instant Chat App Using Node.js and Socket.io. DEV 
+//     Community ‍ ‍. Retrieved March 20, 2022, from 
+//     https://dev.to/safak/react-instant-chat-app-using-node-js-and-socket-io-5c7k
+// Wargowski, M., & Gold, N. (2019, November 26). How to write a video chat app 
+//     using WebRTC Node.js. The Software House. Retrieved March 20, 2022, from 
+//     https://tsh.io/blog/how-to-write-video-chat-app-using-webrtc-and-nodejs/ --}}
