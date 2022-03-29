@@ -1,4 +1,4 @@
-# Chat-and-Voice-Applcation-Advanced-Comms-Final-Project
+# Chat and-Voice Applcation | Advanced Comms Final Project
 Group 11's final project for Advanced Communication Masters level course at Ontario Tech University - Winter 2022. 
 
 We will go over how to download and run these two applcations. 
