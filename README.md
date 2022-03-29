@@ -20,17 +20,17 @@ This will run the application. Then you can go to your browser and type: `http:/
 Open up 2 windows of the same URL and start typing in your messages. You will see the messages of both users on either end. You can have multiple windows as well and each user will be able to chat with the rest of the users online. 
 
 ## Voice Application
-The voice application requires NodeJS to run this application. You can download NodeJS from this site: https://nodejs.org/en/download/. Download the correct version for your device. 
+The voice application requires NodeJS to run this application. You can download NodeJS from this site: https://nodejs.org/en/download/. Download the correct version for your device. Close the terminal after installing NPM (if you have it open) so that updates with the NPM library. 
 After that, navigate to the voice_Application folder and open a terminal window in this folder. Type: 
 ```
-npm install
+npm i express express-handlebars socket.io nodemon
 ```
 Then, to run the Application: 
 ```
-nodemon ./server.js
+node ./server.js
 ```
-Then, navigate to your browser again and type in `http://localhost:8000/` and you will see the application running. 
-To interact with it, allow access to your mic, click on `Go online`, then click on `Open microphone` and begin speaking. You can open up another window with the same URL and you will hear yourself twice on either end. 
+Then, navigate to your browser again and type in `http://localhost:8000/` and you will see the application running. Make sure that there is a mic attached to your computer. 
+To interact with it, allow access to your mic, click on `Go online`, then click on `Turn on microphone` and begin speaking. You can open up another window with the same URL and you will hear yourself twice on either end. 
 
 Both applications have links between each other. This means that you run both at the same time, you can navigate between both Applications seamlessly. 
 
